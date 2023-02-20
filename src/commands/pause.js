@@ -10,7 +10,7 @@ module.exports = {
         const queue = client.player.getQueue(message.guild.id);
 
         if (!queue || !queue.playing)
-            return message.reply({ content: `❌ | There is no music currently playing!.`, allowedMentions: { repliedUser: false } });
+            return message.reply({ content: `❌ | Có bật nhạc deo đâu mà pause @.`, allowedMentions: { repliedUser: false } });
 
         const success = queue.setPaused(true);
         return success ? message.react('⏸️') : message.reply({ content: `❌ | Something went wrong.`, allowedMentions: { repliedUser: false } });
@@ -23,6 +23,6 @@ module.exports = {
             return interaction.reply({ content: `❌ | There is no music currently playing!.`, allowedMentions: { repliedUser: false } });
 
         const success = queue.setPaused(true);
-        return success ? interaction.reply("⏸️ | Music paused.") : interaction.reply({ content: `❌ | Sai rồi cưng ơi.`, allowedMentions: { repliedUser: false } });
+        return success ? interaction.reply("⏸️ | Music paused.") : interaction.reply({ content: `❌ | Something went wrong.`, allowedMentions: { repliedUser: false } });
     },
 };
